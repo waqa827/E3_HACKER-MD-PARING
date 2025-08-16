@@ -44,7 +44,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   
-  const ownerNumber = ['923237045919']
+  const ownerNumber = ['923495178663']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -69,7 +69,7 @@ const {
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
     if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
     
-    const sessdata = config.SESSION_ID.replace("ARSLAN-MD~", '');
+    const sessdata = config.SESSION_ID.replace("E3_HACKER-MD~", '');
     try {
         // Decode base64 string
         const decodedData = Buffer.from(sessdata, 'base64').toString('utf-8');
@@ -120,8 +120,8 @@ const port = process.env.PORT || 9090;
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
   
-  let up = `*Hello there BarbieX-MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet BarbieX-MD WhatsApp Bot.\n\n *Thanks for using BarbieX-MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VarfjW04tRrmwfb8x306 \n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/Arslan-MD/BarbieX-MD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ArslanMD Official ❣️ \ud83d\udda4`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/znk2e2.png` }, caption: up })
+  let up = `*Hello there E3_HACKER-MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet E3_HACKER-MD WhatsApp Bot.\n\n *Thanks for using E3_HACKER-MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VajnN629RZAbp8aZAa1E \n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/waqa827/E3_HACKER-MD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ E3_HACKER-MD Official ❣️ \ud83d\udda4`;
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/t0sryn.png` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)

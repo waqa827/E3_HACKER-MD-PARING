@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>💀 E3_HACKER_MD Pair 💀</title>
+  <title>☠️ DANGER | E3_HACKER_MD ☠️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Courier New', monospace;
       background-color: #000;
-      color: #0f0;
+      color: #f00;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -17,19 +17,18 @@
       overflow: hidden;
     }
     h1 {
-      color: #0f0;
-      font-size: 32px;
+      color: #ff0000;
+      font-size: 36px;
       margin-bottom: 20px;
-      text-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+      text-shadow: 0 0 25px #f00, 0 0 50px #f00;
       animation: glitch 1.5s infinite alternate;
     }
     @keyframes glitch {
-      0% { text-shadow: 2px 2px red; }
-      20% { text-shadow: -2px -2px cyan; }
-      40% { text-shadow: 2px -2px lime; }
-      60% { text-shadow: -2px 2px magenta; }
-      80% { text-shadow: 3px 3px yellow; }
-      100% { text-shadow: -3px -3px #0f0; }
+      0% { text-shadow: 3px 3px lime; }
+      25% { text-shadow: -3px -3px cyan; }
+      50% { text-shadow: 4px -2px red; }
+      75% { text-shadow: -2px 4px magenta; }
+      100% { text-shadow: 0 0 30px #f00; }
     }
     input, button {
       padding: 14px;
@@ -43,22 +42,22 @@
     }
     input {
       background: #111;
-      color: #0f0;
-      border: 1px solid #0f0;
-      box-shadow: 0 0 15px #0f0 inset;
+      color: #f00;
+      border: 1px solid #f00;
+      box-shadow: 0 0 15px #f00 inset;
     }
     button {
-      background-color: #0f0;
+      background-color: #f00;
       color: #000;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s ease;
-      box-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+      box-shadow: 0 0 20px #f00, 0 0 40px #f00;
     }
     button:hover {
       background-color: #000;
-      color: #0f0;
-      box-shadow: 0 0 25px #0f0, 0 0 50px #0f0;
+      color: #f00;
+      box-shadow: 0 0 30px #f00, 0 0 60px #f00;
       transform: scale(1.05);
     }
     .output {
@@ -68,15 +67,14 @@
       border-radius: 10px;
       max-width: 500px;
       word-break: break-all;
-      border: 1px solid #0f0;
-      box-shadow: 0 0 20px #0f0 inset;
-      animation: hackerGlow 2s infinite alternate;
+      border: 1px solid #f00;
+      box-shadow: 0 0 25px #f00 inset;
+      animation: dangerPulse 1.5s infinite alternate;
     }
-    @keyframes hackerGlow {
-      0% { box-shadow: 0 0 10px #0f0 inset; }
-      100% { box-shadow: 0 0 30px #0f0 inset; }
+    @keyframes dangerPulse {
+      0% { box-shadow: 0 0 10px #f00 inset; }
+      100% { box-shadow: 0 0 35px #f00 inset; }
     }
-    /* Matrix rain background */
     canvas {
       position: fixed;
       top: 0;
@@ -85,7 +83,6 @@
       height: 100%;
       z-index: -2;
     }
-    /* Blood rain overlay */
     #blood {
       position: fixed;
       top: 0;
@@ -95,20 +92,42 @@
       z-index: -1;
       pointer-events: none;
     }
+    /* Flicker warning skull */
+    #skull {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 60px;
+      color: red;
+      text-shadow: 0 0 25px red;
+      animation: skullFlicker 1s infinite;
+      z-index: 10;
+      opacity: 0.7;
+    }
+    @keyframes skullFlicker {
+      0%, 50%, 100% { opacity: 0.7; }
+      25%, 75% { opacity: 0.1; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>💀 E3_HACKER-MD PAIR 💀</h1>
+  <h1>☠️ SYSTEM BREACH | E3_HACKER_MD ☠️</h1>
 
   <input type="text" id="number" placeholder="⚡ Enter WhatsApp Number (923123456789)" />
-  <button onclick="getCode()">⚡ Generate Pair Code ⚡</button>
+  <button onclick="getCode()">⚡ GENERATE DANGER CODE ⚡</button>
 
   <div id="result" class="output" style="display:none;"></div>
 
-  <!-- Background layers -->
+  <!-- Background Layers -->
   <canvas id="matrix"></canvas>
   <canvas id="blood"></canvas>
+  <div id="skull">💀</div>
+
+  <!-- Hacker Horror Audio -->
+  <audio id="hacker-audio" autoplay loop>
+    <source src="https://actions.google.com/sounds/v1/ambiences/scary_ambience.ogg" type="audio/ogg">
+  </audio>
 
   <script>
     async function getCode() {
@@ -116,26 +135,26 @@
       const resultBox = document.getElementById("result");
 
       if (!number) {
-        alert("⚠ Enter a valid number!");
+        alert("⚠ ENTER A VALID VICTIM NUMBER!");
         return;
       }
 
       resultBox.style.display = 'block';
-      resultBox.textContent = "⏳ Generating ultra hacker code... Wait...";
+      resultBox.textContent = "⏳ Injecting malicious code... Please wait...";
 
       try {
         const res = await fetch(`/code?number=${encodeURIComponent(number)}`);
         const data = await res.json();
 
         if (data.code) {
-          resultBox.textContent = `✅ PAIR CODE: ${data.code}`;
+          resultBox.textContent = `☠️ DANGER CODE: ${data.code}`;
         } else if (data.error) {
           resultBox.textContent = `❌ ERROR: ${data.error}`;
         } else {
           resultBox.textContent = "⚠ Unknown response received.";
         }
       } catch (err) {
-        resultBox.textContent = `❌ Failed: ${err.message}`;
+        resultBox.textContent = `❌ FAILED: ${err.message}`;
       }
     }
 
@@ -166,7 +185,7 @@
     }
     setInterval(drawMatrix, 35);
 
-    // Blood Rain
+    // Blood Rain + Splash
     const bloodCanvas = document.getElementById("blood");
     const btx = bloodCanvas.getContext("2d");
     bloodCanvas.height = window.innerHeight;
@@ -177,18 +196,23 @@
         this.x = x;
         this.y = y;
         this.speed = speed;
-        this.length = Math.random() * 20 + 10;
+        this.length = Math.random() * 25 + 15;
       }
       fall() {
         this.y += this.speed;
         if (this.y > bloodCanvas.height) {
+          // splash effect at bottom
+          btx.beginPath();
+          btx.arc(this.x, bloodCanvas.height - 5, Math.random() * 12 + 6, 0, Math.PI * 2);
+          btx.fillStyle = "rgba(255,0,0,0.5)";
+          btx.fill();
           this.y = -this.length;
           this.x = Math.random() * bloodCanvas.width;
         }
       }
       draw() {
         btx.beginPath();
-        btx.strokeStyle = "rgba(200, 0, 0, 0.8)";
+        btx.strokeStyle = "rgba(255, 0, 0, 0.9)";
         btx.lineWidth = 2;
         btx.moveTo(this.x, this.y);
         btx.lineTo(this.x, this.y + this.length);
@@ -197,8 +221,8 @@
     }
 
     let bloodDrops = [];
-    for (let i = 0; i < 120; i++) {
-      bloodDrops.push(new BloodDrop(Math.random() * bloodCanvas.width, Math.random() * bloodCanvas.height, Math.random() * 5 + 2));
+    for (let i = 0; i < 150; i++) {
+      bloodDrops.push(new BloodDrop(Math.random() * bloodCanvas.width, Math.random() * bloodCanvas.height, Math.random() * 6 + 3));
     }
 
     function drawBlood() {
@@ -210,12 +234,18 @@
     }
     setInterval(drawBlood, 30);
 
-    // Resize canvases on window resize
+    // Resize canvases
     window.addEventListener("resize", () => {
       matrixCanvas.width = window.innerWidth;
       matrixCanvas.height = window.innerHeight;
       bloodCanvas.width = window.innerWidth;
       bloodCanvas.height = window.innerHeight;
+    });
+
+    // Force audio to play after first click
+    document.body.addEventListener("click", () => {
+      const audio = document.getElementById("hacker-audio");
+      if (audio.paused) audio.play();
     });
   </script>
 
